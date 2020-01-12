@@ -44,10 +44,8 @@ While developing, you will probably rely mostly on `make server.start`; however,
 
 | `make <script>`      | Description                                                                  |
 | -------------------- | ---------------------------------------------------------------------------- |
-| `help`               | Display availables make commands                                             |
 | `server.install`     | Install the pip dependencies on the server's container.                      |
 | `server.start`       | Run your local server in its own docker container.                           |
-| `server.daemon`      | Run your local server in its own docker container as a daemon.               |
 | `server.upgrade`     | Upgrade pip packages interactively.                                          |
 | `database.connect`   | Connect to your docker database.                                             |
 | `database.migrate`   | Generate a database migration file using alembic, based on your model files. |
@@ -57,8 +55,7 @@ While developing, you will probably rely mostly on `make server.start`; however,
 | `test.coverage`      | Run test coverage using pytest-cov.                                          |
 | `test.lint`          | Run flake8 on the `src` and `test` directories.                              |
 | `test.safety`        | Run safety to check if your vendors have security issues.                    |
-| `format.black`       | Format python files using Black.                                             |
-| `format.isort`       | Order python imports using isort.                                            |
+                                   
 
 ## Database
 
@@ -93,8 +90,6 @@ $ make database.connect
 │   ├── swagger              # Resources documentation
 │   │   └── enrollment       # Documentation of the user resource
 │   │       └── GET.yml      # Documentation of the GET method on the enrollment resource
-│   ├── util                 # Some helpfull, non-business Python functions for your project
-│   │   └── parse_params.py  # Wrapper for the resources to easily handle parameters
 │   ├── config.py            # Project configuration settings
 │   ├── manage.py            # Project commands
 │   └── server.py            # Server configuration

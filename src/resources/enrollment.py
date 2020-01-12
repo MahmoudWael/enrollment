@@ -4,15 +4,15 @@ from flask_restful import Resource
 from flask import request
 
 from repositories import EnrollmentRepository
-from util import parse_params
+
 
 class EnrollmentResource(Resource):
     @staticmethod
     @swag_from("../swagger/enrollment/GET.yml")
     def get():
         # udacity_user_key = request.args.get('udacity_user_key')
-        udacity_user_key = "1111" #dummy key
-        enrollment = EnrollmentRepository.get(udacity_user_key=udacity_user_key);
+        udacity_user_key = "1111"   # dummy_key is set to 1111
+        enrollment = EnrollmentRepository.get(udacity_user_key=udacity_user_key)
         return jsonify({'enrollment': [row.json for row in enrollment]})
 
     @staticmethod

@@ -1,7 +1,6 @@
 from . import db
 from .abc import BaseModel, MetaBaseModel
 import uuid
-import enum
 import datetime
 
 
@@ -10,8 +9,7 @@ class Enrollment(db.Model, BaseModel, metaclass=MetaBaseModel):
 
     __tablename__ = "enrollment"
 
-
-    id = db.Column(db.Integer, primary_key = True, nullable=False)
+    id = db.Column(db.Integer, primary_key=True, nullable=False)
     enrollment_id = db.Column(db.String(300))
     nanodegree_key = db.Column(db.String(300), nullable=False)
     udacity_user_key = db.Column(db.Integer, nullable=True)

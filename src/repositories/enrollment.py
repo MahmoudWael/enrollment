@@ -1,10 +1,11 @@
 from models import Enrollment
 
+
 class EnrollmentRepository:
     @staticmethod
     def get(udacity_user_key):
         """ Query enrollments by udacity_user_key """
-        return Enrollment.query.filter_by(udacity_user_key=udacity_user_key).all()    
+        return Enrollment.query.filter_by(udacity_user_key=udacity_user_key).all()
 
     def _getById(self, enrollment_id):
         """ Query a single enrollments by enrollment_id """
@@ -20,6 +21,5 @@ class EnrollmentRepository:
     @staticmethod
     def create(nanodegree_key, status):
         """ Create a new enrollment """
-        enrollment = Enrollment(nanodegree_key = nanodegree_key, status = status)
-
+        enrollment = Enrollment(nanodegree_key=nanodegree_key, status=status)
         return enrollment.save()
