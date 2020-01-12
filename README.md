@@ -33,7 +33,7 @@ $ make server.install      # Install the pip dependencies on the docker containe
 $ make server.start        # Run the container containing your local python server
 ```
 
-The available routes [here](http://127.0.0.1:3000/application/spec).
+The available routes [here](http://127.0.0.1:5000/spec).
 
 ## Commands
 
@@ -128,5 +128,5 @@ $ make test.lint
 
 ## Swagger
 
-The API description will be available [here](http://127.0.0.1:3000/application/spec).
-The Swagger UI will be available [here](http://127.0.0.1:3000/apidocs/).
+The API description will be available [here](http://127.0.0.1:5000/spec).
+The Swagger UI will be available [here](http://127.0.0.1:5000/apidocs/).

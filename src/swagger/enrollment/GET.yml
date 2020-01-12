@@ -6,13 +6,13 @@ parameters:
   - name: udacity_user_key
     in: path
     type: string
-    description: Key represents a user
+    description: Key represents a user (dummy key is 1111)
 responses:
   200:
     description: The enrollments were successfully retrieved
     schema:
       example:
         enrollment:
-          udacity_user_key: 25689975
-          nanodegree_key: 223265877845
+          udacity_user_key: 1111
+          nanodegree_key: b0789885
           status: ENROLLED

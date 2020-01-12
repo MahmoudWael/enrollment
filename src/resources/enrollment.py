@@ -10,7 +10,8 @@ class EnrollmentResource(Resource):
     @staticmethod
     @swag_from("../swagger/enrollment/GET.yml")
     def get():
-        udacity_user_key = request.args.get('udacity_user_key')
+        # udacity_user_key = request.args.get('udacity_user_key')
+        udacity_user_key = "1111" #dummy key
         enrollment = EnrollmentRepository.get(udacity_user_key=udacity_user_key);
         return jsonify({'enrollment': [row.json for row in enrollment]})
 
@@ -18,11 +19,10 @@ class EnrollmentResource(Resource):
     @swag_from("../swagger/enrollment/POST.yml")
     def post():
         parameters = request.json
-        udacity_user_key = parameters.get('udacity_user_key')
         nanodegree_key = parameters.get('nanodegree_key')
         status = parameters.get('status')
         enrollment = EnrollmentRepository.create(
-            nanodegree_key=nanodegree_key, udacity_user_key=udacity_user_key, status=status
+            nanodegree_key=nanodegree_key, status=status
         )
         return jsonify({"enrollment": enrollment.json})
 

@@ -17,7 +17,7 @@ responses:
     schema:
       example:
         enrollment:
-          enrollment_id: 88889445216222318778
-          udacity_user_key: 25689975
-          nanodegree_key: 223265877845
+          enrollment_id: 134788125889445216222318778
+          udacity_user_key: 1111
+          nanodegree_key: b0288932
           status: UNENROLLED

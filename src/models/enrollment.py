@@ -18,10 +18,10 @@ class Enrollment(db.Model, BaseModel, metaclass=MetaBaseModel):
     enrolled_at = db.Column(db.DateTime, default=datetime.datetime.utcnow)
     status = db.Column(db.String(300), nullable=False)
 
-    def __init__(self, nanodegree_key, udacity_user_key, status):
+    def __init__(self, nanodegree_key, status):
         self.enrollment_id = uuid.uuid1().int
         self.nanodegree_key = nanodegree_key
-        self.udacity_user_key = udacity_user_key
+        self.udacity_user_key = "1111"
         self.status = status
 
     def __iter__(self):

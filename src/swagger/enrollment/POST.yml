@@ -3,18 +3,10 @@ Create an enrollment based on the sent information
 tags:
   - enrollment
 parameters:
-  - name: udacity_user_key
-    in: path
-    type: string
-    description: Key represents a user
   - name: nanodegree_key
     in: path
     type: string
     description: Key represents nanodegree in Udacity Catalog
-  - name: enrolled_at
-    in: path
-    type: datetime
-    description: Date of enrollment creation
   - name: status
     in: path
     type: string
@@ -26,6 +18,6 @@ responses:
       example:
         enrollment:
           enrollment_id: 88889445216222318778
-          udacity_user_key: 25689975
-          nanodegree_key: 223265877845
+          udacity_user_key: 1111
+          nanodegree_key: b025638
           status: ENROLLED
