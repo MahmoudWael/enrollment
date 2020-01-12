@@ -1,0 +1,18 @@
+Return enrollments based on udacity_user_key
+---
+tags:
+  - enrollment
+parameters:
+  - name: udacity_user_key
+    in: path
+    type: string
+    description: Key represents a user
+responses:
+  200:
+    description: The enrollments were successfully retrieved
+    schema:
+      example:
+        enrollment:
+          udacity_user_key: 25689975
+          nanodegree_key: 223265877845
+          status: ENROLLED

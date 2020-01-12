@@ -1,0 +1,23 @@
+Update an enrollments based on the sent information
+---
+tags:
+  - enrollment
+parameters:
+  - name: enrollment_id
+    in: path
+    type: string
+    description: ID represents the enrollment object.
+  - name: status
+    in: path
+    type: string
+    description: Enrollment status either ‘ENROLLED’ or ‘UNENROLLED’.
+responses:
+  200:
+    description: The enrollment was successfully created
+    schema:
+      example:
+        enrollment:
+          enrollment_id: 88889445216222318778
+          udacity_user_key: 25689975
+          nanodegree_key: 223265877845
+          status: UNENROLLED
