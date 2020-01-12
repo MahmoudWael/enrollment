@@ -22,7 +22,7 @@ You will need [docker](https://docs.docker.com/engine/installation/) and [docker
 First, clone the project:
 
 ```bash
-$ git clone <repo-url> m/ant<my-project-name>
+$ git clone https://github.com/MahmoudWael/enrollment.git <my-project-name>
 $ cd <my-project-name>
 ```
 
