@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Enrolled from './Enrolled'
+import Header from './Header';
 
 export class Nanodegree extends Component {
     constructor(props){
@@ -23,23 +25,20 @@ export class Nanodegree extends Component {
 
         axios.get("http://localhost:5000/enroll/", config)
             .then(response => { 
-                const enrollments = response.data
+                const enrollments = response.data.enrollment
                 this.setState({enrollments})
             })
             .catch(err => console.log(err))
-    }
-
-    enrollHandelr(d){
-        console.log(d.key)
-    }
+    }   
 
     render() {
         return(
             <div>
+                <Header enrollments={this.state.enrollments}/>
                {this.state.degrees.map(d =>{ return (d.available && d.open_for_enrollment)? 
                  <div key={d.key}> 
-                    <div>{d.slug}</div> 
-                    <button onClick={() => this.enrollHandelr(d)}>Enroll</button> 
+                    <Enrolled img={d.image} title={d.title} disc={d.short_summary} degrees={this.state.degrees} nano_key={d.key} 
+                        enrollments={this.state.enrollments}/>
                 </div> : "" })}
             </div>
         )
