@@ -12,6 +12,7 @@ An enrollment microservice for nanodegrees.
 1. [Application Structure](#application-structure)
 1. [Testing](#testing)
 1. [Swagger](#swagger)
+1. [Web Client](#web-client)
 
 ## Dependencies
 
@@ -130,3 +131,18 @@ $ make test.lint
 
 The API description will be available [here](http://127.0.0.1:5000/spec).
 The Swagger UI will be available [here](http://127.0.0.1:5000/apidocs/).
+
+## Web Client
+
+The client directory has a react app to consume available and open for enrollment nanodegrees and send a request to our back-end to enroll user to
+those nanodegrees.
+
+No UI libraries are being used with the web app.
+
+```bash
+$ cd client/               # React app
+$ npm start                # Run the react app http://127.0.0.1:3000
+```
+
+
+![](https://media.giphy.com/media/MEvcqlB1dpfCq6r6TX/giphy.gif)
