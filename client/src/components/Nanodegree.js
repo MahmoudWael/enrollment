@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Enrolled from './Enrolled'
+import Degrees from './Degrees'
 import Header from './Header';
 
 export class Nanodegree extends Component {
@@ -37,7 +37,7 @@ export class Nanodegree extends Component {
                 <Header enrollments={this.state.enrollments}/>
                {this.state.degrees.map(d =>{ return (d.available && d.open_for_enrollment)? 
                  <div key={d.key}> 
-                    <Enrolled img={d.image} title={d.title} disc={d.short_summary} degrees={this.state.degrees} nano_key={d.key} 
+                    <Degrees img={d.image} title={d.title} disc={d.short_summary} degrees={this.state.degrees} nano_key={d.key} 
                         enrollments={this.state.enrollments}/>
                 </div> : "" })}
             </div>

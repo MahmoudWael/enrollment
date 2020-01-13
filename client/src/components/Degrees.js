@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
-import './Enrolled.css'
+import './Degrees.css'
 import axios from 'axios'
 
-export class Enrolled extends Component {
+export class Degrees extends Component {
     constructor(props){
         super(props)
         this.state = {
-            buttonMessage: "Enroll"
+            buttonMessage: "Enroll",
+            buttonDisabled: false
         }
     }
 
@@ -17,7 +18,7 @@ export class Enrolled extends Component {
                 headers: { 'Content-Type': 'application/json' },
                 data: { nanodegree_key: key, status: 'ENROLLED' }
         })
-        .then(() => this.setState({buttonMessage: "Thank you for Enrollment"}))
+        .then(() => this.setState({buttonMessage: "Thank you for Enrollment", buttonDisabled: true}))
         .catch(err => console.log(err))
 
     }
@@ -32,7 +33,9 @@ export class Enrolled extends Component {
                     <p>{this.props.disc}</p>
                    { 
                        this.props.enrollments.every(e => e.nanodegree_key !== this.props.nano_key)? 
-                       <button className={'button'} onClick={() => this.enrollHandelr(this.props.nano_key)}>{this.state.buttonMessage}</button> : '' 
+                       <button className={'button'}  disabled={this.state.buttonDisabled}
+                            onClick={() => this.enrollHandelr(this.props.nano_key)}>
+                            {this.state.buttonMessage}</button> : '' 
                     }
                 </div>
             </div>
@@ -40,4 +43,4 @@ export class Enrolled extends Component {
     }
 }
 
-export default Enrolled
+export default Degrees

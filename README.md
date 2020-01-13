@@ -55,7 +55,9 @@ While developing, you will probably rely mostly on `make server.start`; however,
 | `test.coverage`      | Run test coverage using pytest-cov.                                          |
 | `test.lint`          | Run flake8 on the `src` and `test` directories.                              |
 | `test.safety`        | Run safety to check if your vendors have security issues.                    |
-                                   
+| `client.start`       | Start react app in its docker container
+| `client.stop`        | Stop react app container
+                                  
 
 ## Database
 
@@ -102,7 +104,6 @@ To develop locally, here are your two options:
 
 ```bash
 $ make server.start           # Create the containers containing your python server in your terminal
-$ make server.daemon          # Create the containers containing your python server as a daemon
 ```
 You can check the logs in the `./server.log` file.
 
@@ -135,8 +136,7 @@ those nanodegrees.
 No UI libraries are being used with the web app.
 
 ```bash
-$ cd client/               # React app
-$ npm start                # Run the react app http://127.0.0.1:3000
+$ make client.start
 ```
 
 

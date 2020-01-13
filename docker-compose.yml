@@ -38,5 +38,17 @@ services:
       APPLICATION_DB_CONTAINER: testdb
     command: python -m pytest test/
 
+  client:
+    build:
+      context: ./client
+    command: npm start
+    volumes:
+      - /app/node_modules
+      - ./client:/app
+    depends_on:
+      - server
+    ports:
+      - "3000:3000"
+
   testdb:
     image: postgres:9.4
