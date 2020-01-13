@@ -90,7 +90,7 @@ $ make database.connect
 │   │   ├── __init__.py      # Contains every blueprint of your API
 │   │   └── enrollment.py    # The blueprint related to the enrollment
 │   ├── swagger              # Resources documentation
-│   │   └── enrollment       # Documentation of the user resource
+│   │   └── enrollment       # Documentation of the enrollment resource
 │   │       └── GET.yml      # Documentation of the GET method on the enrollment resource
 │   ├── config.py            # Project configuration settings
 │   ├── manage.py            # Project commands
