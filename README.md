@@ -135,6 +135,8 @@ those nanodegrees.
 
 No UI libraries are being used with the web app.
 
+React app will be available [here](http://127.0.0.1:3000).
+
 ```bash
 $ make client.start
 ```
